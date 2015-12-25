@@ -1,0 +1,27 @@
+<h2>Alkamassa olevat pelit</h2>
+
+<p ng-if="userLoggedIn">
+    <button>Aloita uusi peli</button>
+</p>
+
+<div class="panel panel-default" ng-repeat="game in startingGames">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <a ng-if="userLoggedIn" ng-href="#/game/{{game.$id}}">Liity peliin #{{game.$id}}</a>
+            <span ng-if="!userLoggedIn">Peli #{{game.$id}}</span>
+        </h3>
+    </div>
+</div>
+
+<div ng-if="activeGames">
+    <h2>Käynnissä olevat pelit</h2>
+
+    <div class="panel panel-default" ng-repeat="game in activeGames">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <a ng-if="userLoggedIn" ng-href="#/game/{{game.$id}}">Seuraa peliä #{{game.$id}}</a>
+                <span ng-if="!userLoggedIn">Peli #{{game.$id}}</span>
+            </h3>
+        </div>
+    </div>
+</div>

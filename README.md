@@ -1,1 +1,1 @@
-# kiinalainen-ihmepeli
+# Kiinalainen Ihmepeli
