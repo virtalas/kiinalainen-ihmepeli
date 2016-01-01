@@ -13,6 +13,17 @@ GameApp.config(function ($routeProvider) {
                     }
                 }
             })
+            .when('/games/:id', {
+                controller: 'GameController',
+                templateUrl: 'app/views/game/game.html',
+                resolve: {
+                    userLoggedIn: function ($rootScope, Api) {
+                        return Api.getUserLoggedIn().success(function (user) {
+                            $rootScope.userLoggedIn = user.username ? user : null;
+                        });
+                    }
+                }
+            })
             .when('/login', {
                 controller: 'UsersController',
                 templateUrl: 'app/views/user/login.html',
