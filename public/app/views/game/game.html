@@ -1,1 +1,11 @@
-Peli
+<h3>Peli #{{game.id}}</h3>
+<h4><span ng-if="!game.active && !game.done">Alkamassa – odotetaan pelaajia</span></h4>
+<h4><span ng-if="game.active && !game.done">Käynnissä</span></h4>
+<h4><span ng-if="!game.active && game.done">Loppunut</span></h4>
+
+<ng-pluralize count="game.ki_Users.length"
+              when="{'0': '0 pelaajaa',
+              'one': '1 pelaaja',
+              'other': '{} pelaajaa'}">
+</ng-pluralize>
+<span ng-repeat="user in game.ki_Users"> - {{user.username}}</span>

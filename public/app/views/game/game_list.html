@@ -7,8 +7,20 @@
 <div class="panel panel-default" ng-repeat="game in startingGames">
     <div class="panel-heading">
         <h3 class="panel-title">
-            <a ng-if="userLoggedIn" ng-href="#/games/{{game.id}}">Liity peliin #{{game.id}} – N pelaajaa</a>
-            <span ng-if="!userLoggedIn">Peli #{{game.id}} – N pelaajaa</span>
+            <a ng-if="userLoggedIn" ng-href="#/games/{{game.id}}">Liity peliin #{{game.id}} – 
+                <ng-pluralize count="game.ki_Users.length"
+                              when="{'0': '0 pelaajaa',
+                              'one': '1 pelaaja',
+                              'other': '{} pelaajaa'}">
+                </ng-pluralize>
+            </a>
+            <span ng-if="!userLoggedIn">Peli #{{game.id}} – 
+                <ng-pluralize count="game.ki_Users.length"
+                              when="{'0': '0 pelaajaa',
+                              'one': '1 pelaaja',
+                              'other': '{} pelaajaa'}">
+                </ng-pluralize>
+            </span>
         </h3>
     </div>
 </div>
@@ -19,8 +31,20 @@
     <div class="panel panel-default" ng-repeat="game in activeGames">
         <div class="panel-heading">
             <h3 class="panel-title">
-                <a ng-if="userLoggedIn" ng-href="#/games/{{game.id}}">Seuraa peliä #{{game.id}} – N pelaajaa</a>
-                <span ng-if="!userLoggedIn">Peli #{{game.id}} – N pelaajaa</span>
+                <a ng-if="userLoggedIn" ng-href="#/games/{{game.id}}">Seuraa peliä #{{game.id}} – 
+                    <ng-pluralize count="game.ki_Users.length"
+                                  when="{'0': '0 pelaajaa',
+                                  'one': '1 pelaaja',
+                                  'other': '{} pelaajaa'}">
+                    </ng-pluralize>
+                </a>
+                <span ng-if="!userLoggedIn">Peli #{{game.id}} – 
+                    <ng-pluralize count="game.ki_Users.length"
+                                  when="{'0': '0 pelaajaa',
+                                  'one': '1 pelaaja',
+                                  'other': '{} pelaajaa'}">
+                    </ng-pluralize>
+                </span>
             </h3>
         </div>
     </div>

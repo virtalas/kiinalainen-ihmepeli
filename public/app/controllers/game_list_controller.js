@@ -3,10 +3,10 @@ GameApp.controller('GameListController', function ($scope, $location, Api) {
         $scope.startingGames = games;
     });
     
-    $scope.activeGames = [{
-            id: 1233
-    }];
-
+    Api.getActiveGames().success(function (games) {
+        $scope.activeGames = games;
+    });
+   
     $scope.newGame = function () {
         var newGame = {
             active: false,

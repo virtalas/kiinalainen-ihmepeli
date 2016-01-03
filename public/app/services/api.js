@@ -1,10 +1,23 @@
 GameApp.service('Api', function ($http) {
+    
     this.addGame = function (game) {
         return $http.post("/games", game);
     }
     
     this.getStartingGames = function () {
         return $http.get("/games/starting");
+    }
+    
+    this.getActiveGames = function () {
+        return $http.get("/games/active");
+    }
+    
+    this.getGame = function (id) {
+        return $http.get("/games/" + id);
+    }
+    
+    this.addUserToGame = function (id) {
+        return $http.post("/games/add/" + id);
     }
     
     // Aihealueiden Api-funktiot
