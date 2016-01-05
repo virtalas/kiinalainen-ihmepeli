@@ -1,5 +1,5 @@
 {
-  "name": "Kiinalainen Ihmepeli",
+  "name": "kiinalainen-ihmepeli",
   "ignore": [
     "**/.*",
     "node_modules",

@@ -1,5 +1,5 @@
 {
-  "name": "Kiinalainen Ihmepeli",
+  "name": "kiinalainen-ihmepeli",
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -14,7 +14,6 @@
     "pg": "^4.3.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^2.0.5",
-    "serve-favicon": "~2.2.0",
-    "sqlite3": "^3.0.5"
+    "serve-favicon": "~2.2.0"
   }
 }
